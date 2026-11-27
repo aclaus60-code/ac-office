@@ -107,12 +107,16 @@ const LG = AC.LG = {
       cols.forEach((col, c) => { ctx.y = y0; col.forEach(x => PDF.text(ctx, '•  ' + x, { x: ctx.left + 15 + c * cw, w: cw - 4, size: 10, after: 0 })); yMax = Math.max(yMax, ctx.y); });
       ctx.y = yMax + 3 * S; }
     // Unterschrift
+    const ou = PDF.ou('für Teilnahmebescheinigungen keine Form vorgeschrieben ist', 'bescheinigung');
     const y = Math.max(ctx.y + 22 * S, 238); doc.setDrawColor(...C.black); doc.setLineWidth(0.3);
-    doc.line(ctx.left + 15, y, ctx.left + 80, y); doc.line(W - ctx.right - 80, y, W - ctx.right - 15, y);
+    doc.line(ctx.left + 15, y, ctx.left + 80, y); if (!ou) doc.line(W - ctx.right - 80, y, W - ctx.right - 15, y);
     PDF.font(doc, 9, 'normal', C.grau); doc.text(`${a.ort}, ${U.de(lg.bis || lg.von)}`, ctx.left + 15, y - 2);
-    doc.text('Ort, Datum', ctx.left + 15, y + 4); doc.text([`${a.name}`, a.titel], W - ctx.right - 15, y + 4, { align: 'right' });
+    doc.text('Ort, Datum', ctx.left + 15, y + 4);
+    if (ou) { PDF.font(doc, 10, 'bold', C.black); doc.text(PDF.clean(a.name), W - ctx.right - 15, y - 2, { align: 'right' }); PDF.font(doc, 9, 'normal', C.grau); doc.text(PDF.clean(a.titel), W - ctx.right - 15, y + 4, { align: 'right' }); }
+    else doc.text([`${a.name}`, a.titel], W - ctx.right - 15, y + 4, { align: 'right' });
     PDF.font(doc, 7.5, 'normal', C.grau); doc.text(`Bescheinigungs-Nr. ${lg.id || 'LG'}-${U.pad(idx + 1, 2)} · Diese Bescheinigung bestätigt die Teilnahme; sie ersetzt keinen amtlichen Prüfungsnachweis.`, ctx.left + 15, y + 15);
-    ctx.y = y + 18;
+    if (ou) doc.text(PDF.clean(PDF.ouText(ou)), ctx.left + 15, y + 19);
+    ctx.y = y + (ou ? 22 : 18);
   },
   bescheinigungen(lg, liste) {
     const tn = liste || lg.teilnehmer.filter(t => t.bescheinigung !== false);

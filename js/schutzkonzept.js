@@ -181,7 +181,8 @@ const SK = AC.SK = {
     P.text(ctx, 'Anlässe für eine außerplanmäßige Überprüfung: sicherheitsrelevanter Vorfall · bauliche Änderung oder Nutzungsänderung · neue Bedrohungslage · Änderung gesetzlicher oder versicherungsseitiger Vorgaben.', { size: 9.5, after: 2 });
     P.text(ctx, `Nächste reguläre Überprüfung des Schutzkonzepts: ${U.de(sk.naechstePruefung)}`, { size: 10, style: 'bold', after: 3 });
     P.box(ctx, 'Hinweise', 'Das Schutzkonzept gibt den Stand zum Zeitpunkt der Erstellung wieder und beruht auf den zur Verfügung gestellten Informationen. Die Empfehlungen sind fachliche Einschätzungen; über ihre Umsetzung entscheidet der Auftraggeber. Das Konzept enthält keine Rechtsberatung im Sinne des Rechtsdienstleistungsgesetzes (RDG).', { size: 9 });
-    P.sign(ctx, [`Ort, Datum · ${a.name} (Verfasser)`, 'Ort, Datum · Auftraggeber (Kenntnisnahme)']);
+    const ou = P.ou('für das Schutzkonzept keine Form vorgeschrieben ist');
+    P.sign(ctx, [`Ort, Datum · ${a.name} (Verfasser)`, 'Ort, Datum · Auftraggeber (Kenntnisnahme)'], 14, ou && Object.assign({ i: 0 }, ou));
 
     /* Inhaltsverzeichnis mit Seitenzahlen nachtragen */
     doc.setPage(1); let y = tocY;

@@ -46,7 +46,7 @@ const M = AC.M = {
       { at: { columnStyles: { 1: { cellWidth: 32, halign: 'right' } }, didParseCell: d => { if (d.section === 'head' && d.column.index === 1) d.cell.styles.halign = 'right'; if (d.section === 'body' && d.row.index === calc.zeilen.length) d.cell.styles.fillColor = PDF.C.input; } } });
     PDF.payBlock(ctx, `Bitte überweisen Sie den Gesamtbetrag von ${U.eur(calc.gesamt)} bis spätestens ${U.de(o.frist)} auf das unten genannte Konto. Verwendungszweck: ${r.nr}.`,
       { name: s.absender.name, iban: s.bank.iban, bic: s.bank.bic, amount: calc.gesamt, ref: r.nr });
-    PDF.gruss(ctx);
+    PDF.gruss(ctx, '', PDF.ou('für die Mahnung keine Form vorgeschrieben ist (§ 286 Abs. 1 BGB)'));
     return PDF.finish(ctx);
   },
   /* Datenblatt zur Übertragung in den Online-Mahnantrag (eine Seite) */

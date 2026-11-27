@@ -42,7 +42,8 @@ const HO = AC.HO = {
     PDF.table(ctx, null, [[{ content: 'Summe Unterrichtseinheiten (à 45 Min.)', styles: { fontStyle: 'bold' } }, { content: U.nf(ue), styles: { halign: 'right', fontStyle: 'bold' } }], ...(km ? [['Summe gefahrene km', { content: U.nf(km), styles: { halign: 'right' } }]] : [])],
       { zebra: false, at: { columnStyles: { 1: { cellWidth: 28 } } } });
     PDF.text(ctx, 'Die oben aufgeführten Unterrichtseinheiten wurden erbracht.', { size: 10 });
-    PDF.sign(ctx, ['Ort, Datum, Unterschrift Dozent', 'Bestätigung Auftraggeber (Stempel, Unterschrift)'], 16);
+    const ou = PDF.ou('für den Leistungsnachweis keine Form vorgeschrieben ist');
+    PDF.sign(ctx, ['Ort, Datum, Unterschrift Dozent', 'Bestätigung Auftraggeber (Stempel, Unterschrift)'], 16, ou && Object.assign({ i: 0 }, ou));
     return PDF.finish(ctx);
   },
   /* Rechnungsentwurf: je Einsatz eine Position, Fahrtkosten zusammengefasst */

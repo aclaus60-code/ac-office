@@ -119,6 +119,7 @@ AC.DEFAULTS = {
   nummern: { rechnungPraefix: 'RE', rechnung: 1, rechnungJahr: new Date().getFullYear(), kunde: 1, schutzkonzept: 1, schutzkonzeptJahr: new Date().getFullYear(),
     angebot: 1, angebotJahr: new Date().getFullYear(), lehrgang: 1, lehrgangJahr: new Date().getFullYear(), ausgabe: 1, ausgabeJahr: new Date().getFullYear() },
   angebotGueltig: 30, letzteSicherung: '', sicherungIntervall: 7,
+  ohneUnterschrift: true, ohneUnterschriftBescheinigung: true,
   zahlungsziel: 14,
   katalog: [
     { gruppe: 'Lehrgang', bez: 'Lehrgang – Unterrichtseinheit (45 Min.)', text: 'Lehrgangsthema: ', einheit: 'UE', preis: 0 },

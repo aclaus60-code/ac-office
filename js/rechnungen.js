@@ -64,7 +64,7 @@ const R = AC.R = {
         (K.b2b(k) ? '' : '\nHinweis: Sie kommen spätestens 30 Tage nach Fälligkeit und Zugang dieser Rechnung in Verzug, ohne dass es einer Mahnung bedarf (§ 286 Abs. 3 BGB).'), { size: 10.5, after: 3 });
       if (r.schluss) PDF.text(ctx, r.schluss, { after: 4 });
     }
-    PDF.gruss(ctx);
+    PDF.gruss(ctx, '', PDF.ou('eine Unterschrift nach § 14 UStG nicht erforderlich ist'));
     return PDF.finish(ctx);
   },
 

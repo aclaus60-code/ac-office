@@ -147,11 +147,19 @@ const PDF = AC.PDF = {
     });
     ctx.y += rows * lh + 3 * S;
   },
-  /* Unterschriftslinien */
-  sign(ctx, labels, space = 14) {
+  /* „Ohne Unterschrift gültig“ – nur wo keine Form vorgeschrieben ist; abschaltbar unter Einstellungen.
+     grund: Nebensatz mit Rechtsgrundlage, z. B. 'eine Unterschrift nach § 14 UStG nicht erforderlich ist' */
+  ou(grund, art) { const s = AC.settings; if (s.ohneUnterschrift === false || (art === 'bescheinigung' && s.ohneUnterschriftBescheinigung === false)) return null;
+    return { grund, name: s.absender.name, ort: s.absender.ort, datum: U.de(U.today()) }; },
+  ouText: o => `Dieses Dokument wurde elektronisch erstellt und ist ohne Unterschrift gültig, da ${o.grund}.`,
+  /* Unterschriftslinien; ou = { i: Index des eigenen Feldes, …PDF.ou() } ersetzt dieses Feld durch Name + Hinweis */
+  sign(ctx, labels, space = 14, ou) {
     const { doc } = ctx, n = labels.length, gap = 12, w = (ctx.w - gap * (n - 1)) / n;
     space *= PDF.S; PDF.ensure(ctx, space + 8); ctx.y += space;
-    labels.forEach((l, i) => { const x = ctx.left + i * (w + gap); doc.setDrawColor(...PDF.C.black); doc.setLineWidth(0.3); doc.line(x, ctx.y, x + w, ctx.y); PDF.font(doc, 8, 'normal', PDF.C.grau); doc.text(PDF.clean(l), x, ctx.y + 4); });
+    labels.forEach((l, i) => { const x = ctx.left + i * (w + gap);
+      if (ou && i === ou.i) { PDF.font(doc, 9.5, 'bold', PDF.C.black); doc.text(PDF.clean(`${ou.name}${ou.ort ? ' · ' + ou.ort : ''}, ${ou.datum}`), x, ctx.y - 1);
+        PDF.font(doc, 7.5, 'normal', PDF.C.grau); doc.text(doc.splitTextToSize(PDF.clean(`Elektronisch erstellt – ohne Unterschrift gültig, da ${ou.grund}.`), w), x, ctx.y + 3.5); return; }
+      doc.setDrawColor(...PDF.C.black); doc.setLineWidth(0.3); doc.line(x, ctx.y, x + w, ctx.y); PDF.font(doc, 8, 'normal', PDF.C.grau); doc.text(PDF.clean(l), x, ctx.y + 4); });
     ctx.y += 9 * PDF.S;
   },
 
@@ -180,10 +188,11 @@ const PDF = AC.PDF = {
     if (k.anrede === 'Frau') return `Sehr geehrte Frau ${k.nachname},`;
     return k.nachname ? `Guten Tag ${[k.vorname, k.nachname].filter(Boolean).join(' ')},` : 'Sehr geehrte Damen und Herren,';
   },
-  gruss(ctx, extra) {
+  gruss(ctx, extra, ou) {
     const a = AC.settings.absender;
-    PDF.ensure(ctx, 24 * PDF.S); PDF.text(ctx, AC.settings.texte.gruss, { after: 12 });
+    PDF.ensure(ctx, (ou ? 20 : 24) * PDF.S); PDF.text(ctx, AC.settings.texte.gruss, { after: ou ? 3 : 12 });
     PDF.text(ctx, a.name, { style: 'bold', after: 0 }); PDF.text(ctx, a.titel, { size: 9.5, color: PDF.C.grau, after: 2 });
+    if (ou) PDF.text(ctx, PDF.ouText(ou), { size: 8.5, color: PDF.C.grau, after: 2 });
     if (extra) PDF.text(ctx, extra, { size: 9, color: PDF.C.grau });
   },
 

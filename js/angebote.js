@@ -27,7 +27,7 @@ const AN = AC.AN = {
     PDF.positions(ctx, a.positionen); PDF.sums(ctx, a, { label: 'Angebotssumme' });
     PDF.text(ctx, `Dieses Angebot ist gültig bis zum ${U.de(a.gueltigBis)}. Zur Beauftragung genügt eine kurze Bestätigung per E-Mail.`, { size: 10.5, after: 3 });
     if (a.schluss) PDF.text(ctx, a.schluss, { after: 4 });
-    PDF.gruss(ctx); return PDF.finish(ctx);
+    PDF.gruss(ctx, '', PDF.ou('für Angebot und Vertragsschluss keine Form vorgeschrieben ist (§§ 125, 145 ff. BGB)')); return PDF.finish(ctx);
   },
 };
 
