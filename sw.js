@@ -2,7 +2,7 @@
    Es werden NUR Programmdateien zwischengespeichert – keine Kundendaten
    (die liegen ausschließlich im gewählten Datenordner auf dem Gerät).
    Strategie: sofort aus dem Speicher, im Hintergrund aktualisieren. */
-const CACHE = 'ac-office-2026-11-27';
+const CACHE = 'ac-office-2026-11-27b';
 const FILES = ['./', 'AC-Office.html', 'css/app.css', 'manifest.webmanifest', 'favicon.png', 'icon-192.png', 'icon-512.png',
   'vendor/jspdf.umd.min.js', 'vendor/jspdf.plugin.autotable.min.js', 'vendor/qrcode.js', 'js/assets.js',
   ...['core', 'pdf', 'kunden', 'rechnungen', 'mahnwesen', 'schutzkonzept', 'vorlagen', 'angebote', 'lehrgaenge', 'unterlagen', 'ausgaben', 'outlook', 'termine', 'einstellungen', 'start', 'fragenbank-daten', 'unterricht', 'honorar', 'nachweise', 'schiessstand', 'lehrinhalte', 'lehrdauer'].map(n => `js/${n}.js`)];
