@@ -1,0 +1,16 @@
+{
+  "name": "AC Office – AC Security Consulting & Training",
+  "short_name": "AC Office",
+  "description": "Büro-App: Kunden, Angebote, Rechnungen, Lehrgänge, Ausgaben",
+  "lang": "de",
+  "start_url": "AC-Office.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1c1d1c",
+  "theme_color": "#5b5c42",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

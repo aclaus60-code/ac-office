@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     AC Office – Büro-App für AC Security Consulting & Training
+     Start: Doppelklick auf diese Datei (Microsoft Edge oder Google Chrome).
+     Alle Daten liegen im gewählten Datenordner – nichts wird ins Internet
+     übertragen, es werden keine Cookies gesetzt.
+     ===================================================================== -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5b5c42">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>AC Office – AC Security Consulting &amp; Training</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- ============ SEITENLEISTE ============ -->
+<aside class="side">
+ <div class="brand">
+  <img id="sideLogo" alt="AC Security Consulting &amp; Training">
+  <small>AC OFFICE · BÜRO-APP</small>
+ </div>
+ <nav id="nav">
+  <button data-go="start"><span class="ic">◆</span>Übersicht</button>
+  <button data-go="termine"><span class="ic">⏰</span>Termine</button>
+  <button data-go="kunden"><span class="ic">👥</span>Kunden</button>
+  <button data-go="angebote"><span class="ic">✍</span>Angebote</button>
+  <button data-go="rechnungen"><span class="ic">€</span>Rechnungen</button>
+  <button data-go="mahnwesen"><span class="ic">⚑</span>Mahnwesen</button>
+  <button data-go="ausgaben"><span class="ic">🧾</span>Ausgaben &amp; EÜR</button>
+  <button data-go="lehrgaenge"><span class="ic">🎓</span>Lehrgänge</button>
+  <button data-go="unterricht"><span class="ic">📝</span>Unterricht</button>
+  <button data-go="honorar"><span class="ic">⏱</span>Honorar-Einsätze</button>
+  <button data-go="schiessstand"><span class="ic">🎯</span>Schießstand</button>
+  <button data-go="unterlagen"><span class="ic">📚</span>Schulungsunterlagen</button>
+  <button data-go="schutzkonzepte"><span class="ic">🛡</span>Schutzkonzepte</button>
+  <button data-go="vorlagen"><span class="ic">🖨</span>Vorlagen drucken</button>
+  <button data-go="nachweise"><span class="ic">🎫</span>Nachweise &amp; Sicherung</button>
+  <button data-go="einstellungen"><span class="ic">⚙</span>Einstellungen</button>
+ </nav>
+ <div class="foot">Datenordner:<b id="folderName">– nicht verbunden –</b></div>
+</aside>
+<div class="navbg" id="navbg"></div>
+
+<!-- ============ HAUPTBEREICH ============ -->
+<main>
+ <header class="top">
+  <button id="burger" aria-label="Menü öffnen" title="Menü">☰</button>
+  <div><h1 id="title">AC Office</h1><div class="sub" id="subtitle"></div></div>
+  <div class="actions" id="topActions"></div>
+ </header>
+ <section id="view"></section>
+</main>
+
+<!-- Dialog für PDF-Vorschau und Rückfragen -->
+<dialog id="dlg"></dialog>
+<div id="toast"></div>
+
+<!-- Bibliotheken (lokal, keine Internetverbindung nötig) -->
+<script src="vendor/jspdf.umd.min.js"></script>
+<script src="vendor/jspdf.plugin.autotable.min.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script src="js/assets.js"></script>
+<!-- Programmteile -->
+<script src="js/core.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/kunden.js"></script>
+<script src="js/rechnungen.js"></script>
+<script src="js/mahnwesen.js"></script>
+<script src="js/schutzkonzept.js"></script>
+<script src="js/vorlagen.js"></script>
+<script src="js/angebote.js"></script>
+<script src="js/lehrgaenge.js"></script>
+<script src="js/unterlagen.js"></script>
+<script src="js/ausgaben.js"></script>
+<script src="js/outlook.js"></script>
+<script src="js/termine.js"></script>
+<script src="js/einstellungen.js"></script>
+<script src="js/fragenbank-daten.js"></script>
+<script src="js/unterricht.js"></script>
+<script src="js/honorar.js"></script>
+<script src="js/nachweise.js"></script>
+<script src="js/schiessstand.js"></script>
+<script src="js/lehrinhalte.js"></script>
+<script src="js/lehrdauer.js"></script>
+<script src="js/start.js"></script>
+</body>
+</html>

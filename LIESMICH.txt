@@ -1,0 +1,246 @@
+AC OFFICE – Büro-App für AC Security Consulting & Training
+=========================================================
+
+STARTEN
+-------
+1. Den Ordner "AC-Office" an einen festen Platz kopieren, z. B.
+   Dokumente\AC-Office-App   (nicht im Download-Ordner lassen)
+2. Doppelklick auf  AC-Office.html  – öffnen mit Microsoft Edge oder Google Chrome.
+   Tipp: Rechtsklick auf die Datei → "Öffnen mit" → Edge → "Immer diese App verwenden".
+   Tipp: Eine Verknüpfung von AC-Office.html auf den Desktop legen.
+3. Beim ersten Start "Ordner wählen …" klicken und einen NEUEN, eigenen
+   Datenordner anlegen, z. B.  Dokumente\AC-Security-Office
+   Der Browser fragt, ob die App den Ordner bearbeiten darf → erlauben.
+4. Beim nächsten Start: "Zuletzt genutzten Ordner wieder verbinden" klicken.
+
+Firefox und Safari unterstützen den Ordnerzugriff nicht.
+
+
+ABLAGE IM DATENORDNER
+---------------------
+kunden\            je Kunde eine Datei, z. B. K-0001_Muster-GmbH.json
+angebote\          AN-2026-0001.json (Daten) + PDF
+rechnungen\        RE-2026-0001.json (Daten) + RE-2026-0001_Kunde.pdf
+rechnungen\entwuerfe\   Rechnungsentwürfe (noch ohne Nummer)
+mahnungen\         Zahlungserinnerungen, Mahnungen, Datenblatt Mahnbescheid (PDF)
+lehrgaenge\        LG-2026-001.json + Unterordner mit Listen und Bescheinigungen
+schulungsunterlagen\  deine Unterlagen, je Thema ein Unterordner (+ index.json)
+ausgaben\          je Jahr ein Ordner mit Ausgaben (JSON) und belege\
+auswertungen\      Einnahmen-Überschuss-Übersicht (PDF) und CSV-Exporte
+schutzkonzepte\    SK-2026-001.json (bearbeitbar) + PDF je Version
+vorlagen\          abgelegte Druckvorlagen (PDF)
+wiedervorlagen.json  deine eigenen Wiedervorlagen
+einstellungen.json Absender, Steuer, Bank, Nummernkreise, Leistungskatalog, Mahnstufen
+
+Alles sind normale Dateien. Sicherung per Knopfdruck: Übersicht oder
+Einstellungen → "Jetzt sichern" (Ziel z. B. USB-Stick, NICHT im Datenordner).
+Aufbewahrung: Rechnungen und Buchungsbelege 8 Jahre, Geschäftsbriefe 6 Jahre
+(§ 147 Abs. 3 AO).
+
+
+ERSTE SCHRITTE
+--------------
+1. Einstellungen → Steuernummer eintragen (Pflichtangabe auf Rechnungen,
+   § 14 Abs. 4 Satz 1 Nr. 2 UStG). Ohne Steuernummer erstellt die App keine Rechnung.
+2. Einstellungen → Leistungskatalog: deine Preise eintragen.
+3. Kunden anlegen → Angebot, Rechnung, Lehrgang oder Schutzkonzept erstellen.
+
+
+RECHNUNGEN
+----------
+- Erst Entwurf, dann "Rechnung erstellen": Erst jetzt wird die nächste fortlaufende
+  Nummer vergeben und das PDF abgelegt. Danach ist die Rechnung unveränderbar.
+- Fehler? → "Stornorechnung erstellen" (eigene Nummer) und neue Rechnung schreiben.
+- Kleinunternehmer: Hinweis nach § 19 UStG wird automatisch gedruckt.
+  Kleinunternehmer müssen keine E-Rechnung ausstellen (§ 34a UStDV), PDF genügt.
+- Privatkunden: Verzugshinweis nach § 286 Abs. 3 BGB wird automatisch ergänzt.
+- GiroCode: Der QR-Code auf Rechnung und Mahnung füllt die Überweisung in der
+  Banking-App des Kunden automatisch aus.
+
+
+ANGEBOTE
+--------
+- Positionen wie bei Rechnungen (Leistungskatalog). Gültigkeit Standard 30 Tage
+  (Einstellungen). Status: Entwurf → versendet → angenommen/abgelehnt.
+- "In Rechnung übernehmen" erzeugt einen Rechnungsentwurf mit allen Positionen;
+  nach dem Erstellen der Rechnung steht das Angebot auf "abgerechnet".
+
+LEHRGÄNGE & TEILNEHMER
+----------------------
+- Durchführung: Präsenz (Adresse + PLZ/Ort + optional Raum → Standort im
+  Kalender "Adresse, PLZ/Ort" und Navigation über Google Maps), Online
+  (Teams-Link → Kalender) oder Hybrid.
+- Anlagen (optional): Bilder, PDF, Word, Excel, PowerPoint – werden an den
+  Outlook-Termin angehängt. Ablage: lehrgaenge\<Nr.>\anlagen
+- Grunddaten, Teilnehmende (auch per Kopieren aus Excel: Name; Vorname;
+  Geburtsdatum; Kontakt; Firma), Anwesenheit je Tag.
+- Anwesenheit: Wochenenden (grau) und Feiertage NRW (rot, § 2 Abs. 1
+  Feiertagsgesetz NW) sind standardmäßig frei und zählen nicht mit. Einzelne
+  freie Tage per "+ Lehrgangstag" (oder einfach anhaken) aufnehmen, z. B. für
+  Wochenendkurse. Die Quote rechnet nur mit Lehrgangstagen.
+- Teilnehmerliste, Anwesenheitsliste zum Unterschreiben und Teilnahme-
+  bescheinigungen (eine Seite je Person) werden im Lehrgangsordner abgelegt.
+- "Rechnung aus Lehrgang erstellen" legt einen Rechnungsentwurf an.
+- Datenschutz: Nach Abschluss Kontaktdaten und Geburtsdaten löschen, sobald sie
+  nicht mehr gebraucht werden (Art. 5 Abs. 1 lit. c und e DSGVO). Die App
+  erinnert nach 90 Tagen daran.
+
+SCHULUNGSUNTERLAGEN
+-------------------
+- Dateien hineinziehen oder "+ Dateien hinzufügen", je Thema ein Unterordner.
+- Themen sind einklappbar (Klick auf die Überschrift, "Alle auf-/zuklappen").
+  Bei Suche oder Themenfilter klappen die Treffer automatisch auf.
+- Favoriten: Stern ☆ bei einer Unterlage anklicken – sie erscheint rechts in
+  der Spalte "Favoriten" und öffnet sich dort mit einem Klick (▲ = Reihenfolge).
+- Du kannst Dateien auch im Explorer direkt in schulungsunterlagen\<Thema>
+  kopieren – die App erkennt sie beim nächsten Öffnen.
+- PDF und Bilder öffnen im Browser; Word/PowerPoint/Excel über die
+  Download-Leiste mit dem passenden Programm.
+
+AUSGABEN & EÜR-ÜBERSICHT
+------------------------
+- Ausgaben mit Kategorie und Beleg (Foto/PDF) erfassen; Fahrten mit 0,30 €/km.
+- Einnahmen kommen automatisch aus den Zahlungseingängen der Rechnungen
+  (Zuflussprinzip, § 11 EStG).
+- Kleinunternehmergrenzen (§ 19 Abs. 1 UStG): 25.000 € Vorjahr / 100.000 €
+  laufendes Jahr – die App zeigt den Stand an.
+- Die Übersicht ist eine Hilfe, sie ersetzt nicht die Anlage EÜR (Elster).
+- "📦 Steuerunterlagen": eine ZIP-Datei für Steuerberater bzw. Finanzamt mit
+  Deckblatt, EÜR-Übersicht, Einnahmen, Rechnungsausgangsbuch, Ausgaben, Fahrten,
+  allen Rechnungs-PDFs und Belegen. Ablage: auswertungen\Steuerunterlagen_JJJJ.zip
+  (+ Downloads). Die Anlage EÜR selbst wird über ELSTER übermittelt
+  (§ 60 Abs. 4 EStDV).
+
+TERMINE & WIEDERVORLAGEN
+------------------------
+Sammelt automatisch: fällige/überfällige Rechnungen, Angebote zum Nachfassen,
+Lehrgangsbeginn, noch nicht abgerechnete Lehrgänge, Löschfristen für
+Teilnehmerdaten, Schutzkonzept-Prüfungen, Basiszins-Termine und die nächste
+Datensicherung. Dazu eigene Wiedervorlagen.
+
+OUTLOOK-KALENDER
+----------------
+- Bei Terminen, Wiedervorlagen, Fälligkeiten und Lehrgängen: "📅 Outlook".
+  Die App erstellt eine Kalenderdatei (.ics); in der Edge-Download-Leiste
+  "Öffnen" klicken, Outlook übernimmt den Termin. Lehrgänge kommen als
+  Terminserie, freie Tage (Wochenende/Feiertag) sind ausgenommen.
+- Aktualisieren: nach einer Änderung erneut auf "📅 aktualisieren" klicken.
+  Jeder Termin hat eine feste Kennung (UID), Outlook erkennt ihn daran wieder.
+  Beim ersten Mal bitte prüfen, ob Outlook den Termin ersetzt hat und nicht
+  doppelt anlegt – das kann je nach Outlook-Version unterschiedlich sein.
+- DIREKT VERBUNDEN (empfohlen): Ordner outlook-dienst → "Autostart einrichten.cmd"
+  doppelklicken. Dann trägt die App Termine direkt in Outlook ein, ändert und
+  löscht sie (abgesagte Lehrgänge verschwinden wirklich). Anzeige in Termine/
+  Lehrgänge: "● Outlook direkt verbunden". Test: Einstellungen → Outlook-Kalender.
+  Details: outlook-dienst\LIESMICH-Kalenderdienst.txt
+- "🔄 Mit Outlook abgleichen": geplant/läuft → eintragen oder aktualisieren
+  (nur wenn geändert), abgesagt → löschen (ohne Dienst: als "ABGESAGT"
+  markieren), abgeschlossen → bleibt als Nachweis im Kalender.
+- Ohne Dienst (Kalenderdateien): Outlook löscht keine Termine über eine
+  geöffnete Datei – markierte Termine dann in Outlook selbst löschen.
+- Tipp: In Edge bei einer .ics-Datei im Download-Menü "Dateien dieses Typs
+  immer öffnen" wählen – dann reicht wirklich ein Klick.
+
+KUNDEN DIREKT KONTAKTIEREN
+--------------------------
+- In jedem Kunden oben "Kontakt aufnehmen": E-Mail, Telefon, Mobil, SMS,
+  WhatsApp, Route. In der Kundenliste sind Telefon und E-Mail anklickbar.
+- Welche App sich öffnet, legt Windows fest: Einstellungen → Apps →
+  Standard-Apps → "Standardwerte nach Linktyp auswählen" → TEL (z. B.
+  Smartphone-Link, dann ruft dein Handy an) und MAILTO (z. B. Outlook).
+
+PDF-SEITENAUFTEILUNG
+--------------------
+Rechnungen, Mahnungen, Briefe, Datenblatt und Druckvorlagen werden automatisch auf
+EINE Seite eingepasst: Reicht der Platz nicht, verkleinert die App Schrift und
+Abstände schrittweise (bis 70 %). Kopfband, Fußzeile und Anschriftfeld (DIN 5008)
+bleiben in Originalgröße. Ist der Inhalt selbst dafür zu lang (z. B. sehr viele
+Rechnungspositionen oder sehr viele Listenzeilen), entstehen zwei gut gefüllte
+Seiten – nie eine Seite mit nur einem Satz. Ausnahmen: Schutzkonzepte (jeder
+Abschnitt auf eigener Seite) sowie Briefbogen und Notizblatt mit gewählter Seitenzahl.
+
+
+MAHNWESEN
+---------
+Zahlungserinnerung → 1. Mahnung → Letzte Mahnung → Datenblatt Mahnbescheid
+- Verzugszinsen: Verbraucher 5, Unternehmen 9 Prozentpunkte über dem Basiszinssatz
+  (§ 288 Abs. 1 und 2 BGB). Bei Unternehmen zusätzlich 40 € Pauschale (§ 288 Abs. 5 BGB).
+- Basiszinssatz: ändert sich zum 1.1. und 1.7. → Einstellungen → Mahnwesen anpassen
+  (Stand bei Auslieferung: 1,52 % seit 01.07.2026, Quelle: Deutsche Bundesbank).
+- Mahnkosten: nur tatsächliche Kosten (z. B. Porto) ansetzen.
+- Gerichtliches Mahnverfahren: www.online-mahnantrag.de, zuständig für Rheinberg
+  (OLG-Bezirk Düsseldorf): Amtsgericht Hagen, Zentrale Mahnabteilung.
+
+
+DATENSCHUTZ
+-----------
+Die App läuft vollständig lokal. Es gibt keine Verbindung ins Internet, keine Cookies,
+kein Tracking. Der Browser merkt sich nur, welcher Datenordner verbunden war.
+Kundendaten im Verzeichnis von Verarbeitungstätigkeiten (Art. 30 DSGVO) aufführen.
+
+
+TECHNIK / ANPASSEN
+------------------
+AC-Office.html      Startdatei
+css\app.css         Aussehen (Farben im CD, Abschnitt 1)
+js\core.js          Grundfunktionen, Standard-Einstellungen
+js\pdf.js           PDF-Gestaltung (Kopfband, Fußzeile, DIN-5008-Brief)
+js\kunden.js        Kunden
+js\rechnungen.js    Rechnungen, Storno
+js\mahnwesen.js     Mahnstufen, Zinsen, Datenblatt
+js\schutzkonzept.js Schutzkonzept-Assistent (Bausteinbibliotheken oben in der Datei)
+js\vorlagen.js      Druckvorlagen (neue Vorlage = neuer Eintrag in AC.VORL)
+vendor\             jsPDF, jsPDF-AutoTable, qrcode-generator (MIT-Lizenz)
+fonts\              Lizenztexte der Schriften Carlito und Saira (SIL OFL)
+
+Hinweis: Die App ersetzt keine Steuer- oder Rechtsberatung.
+© 2026 AC Security Consulting & Training · Andreas Claus
+
+ERWEITERUNGEN (Stand 26.11.2026)
+--------------------------------
+- Unterricht: Probeprüfungen aus der Fragenbank Sachkunde § 34a GewO (eigene
+  Übungsfragen, keine IHK-Originalfragen), Lehrgangspläne nach Sachgebieten,
+  Feedbackbögen mit Auswertung.
+- Honorar-Einsätze: Einsätze als Honorardozent je Bildungsträger erfassen,
+  Stundennachweis als PDF, Rechnungsentwurf mit einem Klick.
+- Schießstand: Schießtermine mit Berechtigungsprüfung der Teilnehmenden,
+  Fristen nach AWaffV unter „Termine“, Unterlagen als PDF.
+- Nachweise & Sicherung: eigene Nachweise mit Ablaufdatum (z. B. Ersthelfer),
+  externe Sicherung mit Erinnerung.
+- Lehrgänge: „⚖ Inhalte aus Titel vorschlagen“ (Rechtsgrundlagen passend zum
+  Titel), Vorgaben für Unterrichtseinheiten und „Ende automatisch aus UE
+  berechnen“ (freie Tage werden übersprungen).
+- Angebote: Vorgabe Unterrichtseinheiten anklicken, „🎓 Lehrgang aus Angebot
+  anlegen“.
+Alle Vorgaben vor Verwendung auf Aktualität prüfen.
+
+HANDY & TABLET (Android, Google Chrome ab Version 132)
+------------------------------------------------------
+Die App passt sich automatisch an: Menü über ☰ oben links, große Tippflächen,
+Dialoge im Vollbild, breite Tabellen lassen sich seitlich wischen.
+Am Handy gibt es zusätzlich:
+- Lehrgänge → Anwesenheit: „Tag abhaken“ mit großer Namensliste (heute ist
+  vorausgewählt), Häkchen werden automatisch gespeichert.
+- Ausgaben: „📷 Beleg fotografieren“ – große Fotos werden auf max. 2400 Pixel
+  verkleinert (gut lesbar, schnellere Synchronisation).
+- PDFs: „Öffnen“ (PDF-Betrachter, dort auch Drucken) oder „Teilen“ (E-Mail,
+  WhatsApp, Drive …).
+- Outlook-Kalender: Der Abgleich läuft nur am Laptop (Kalenderdienst). Was am
+  Handy geändert wurde, ist nach der Synchronisation beim nächsten Abgleich dabei.
+
+Einrichtung (einmalig):
+1. FolderSync (Play Store) installieren → Konto „OneDrive“ hinzufügen und mit dem
+   Microsoft-Konto anmelden.
+2. Ordnerpaar anlegen: Synchronisation „Zwei-Wege“, Fernordner
+   OneDrive › AC Security › AC-Office-Daten, Geräteordner z. B.
+   Interner Speicher › Documents › AC-Office-Daten. „Sofort synchronisieren“
+   (Instant sync) einschalten, Zeitplan z. B. alle 15 Minuten.
+3. In Chrome die Web-Adresse von AC Office öffnen → Menü ⋮ → „Zum
+   Startbildschirm hinzufügen“ / „App installieren“.
+4. Beim ersten Start „Ordner wählen …“ → den Ordner aus Schritt 2 wählen →
+   „Zulassen“.
+
+Wichtig: Dieselbe Datei nicht gleichzeitig am Laptop und am Handy bearbeiten.
+Vor dem Arbeiten am Handy kurz in FolderSync „Synchronisieren“ tippen.
+Hinweis: In der Web-Version stehen keine persönlichen Daten im Programmcode –
+Name, Anschrift und Bankdaten kommen aus einstellungen.json im Datenordner.
